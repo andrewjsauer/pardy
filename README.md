@@ -1,35 +1,41 @@
-[![Frontend Masters](https://static.frontendmasters.com/assets/brand/logos/full.png)](https://frontendmasters.com/courses/intermediate-next-js/)
-
-This is a companion repo for the [Intermediate Next.js course](https://frontendmasters.com/courses/intermediate-next-js/) course on [Frontend Masters](https://frontendmasters.com).
-
 ## Requirements & Setup Instructions
-
-The setup instructions can be found in the [course notes](https://clumsy-humor-894.notion.site/0-Intro-d0196d3511c34cd69b8690efb51d84b0). You'll need:
 
 - Node version 20
 - [Turso account](https://turso.tech/)
 
-Fork/Clone the repository and checkout the `step/0` branch:
-
-```bash
-git clone https://github.com/Hendrixer/intermediate-nextjs.git
-cd intermediate-nextjs
-git checkout step/0
-npm install
-```
-
 ## Turso Setup
 
-See the [course notes](https://clumsy-humor-894.notion.site/0-Intro-d0196d3511c34cd69b8690efb51d84b0) for instructions for setting up and configuring Turso.
+### **Step 1: Set Up Turso Database**
 
-## Branches
+1. **Create a [Turso Account](https://turso.tech/)**: Sign up and create a new account on Turso if you haven't done so already.
+2. **Obtain Database URL and Auth Token**:
+   - Navigate to the Turso dashboard.
+   - Set up a new database instance and retrieve the database URL and the authorization token.
 
-The `main` branch is a final version of the application. Checkout the `step/0` branch if you are starting the course. There are several other "checkpoint" branches:
+### **Step 2: Configure Environment**
 
-- `step/0`: Starting branch for the course
-- `step/1`: Starting code for the Routing & Data Fetching section
-- `step/2`: Starting code for the Per-Request Caching lesson
-- `step/3`: Starting code for the Active & Protected Routes section
-- `step/4`: Starting code for the Advanced Server Actions & Revalidation section
-- `step/5`: Starting code for the Events Page lesson
-- `step/6`: Final code from the course (similar to what is on the main branch)
+Create a **`.env`** file in the root directory of your cloned repository. Add the following lines to the file:
+
+```bash
+TURSO_CONNECTION_URL=""
+TURSO_AUTH_TOKEN=""
+```
+
+Add your Turso URL and Auth token here.
+
+### **Step 3: Initialize the Database**
+
+Run the following command in your terminal to push the initial schema to your Turso database:
+
+```bash
+npm run db:push
+```
+
+This step ensures that your local development environment is synchronized with your database schema, setting the stage for development.
+
+## Running the Application
+
+```bash
+yarn install
+yarn dev
+```
